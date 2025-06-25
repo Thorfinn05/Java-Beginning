@@ -9,10 +9,12 @@ public class Byte {
         a++;
         System.out.println(a);
 
-        
+        // It overflows here because
+        // byte can hold values from -128 to 127
         a++;
         System.out.println(a);
 
+        // Looping back within the range
         a++;
         System.out.println(a);
     }
