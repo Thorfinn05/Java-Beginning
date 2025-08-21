@@ -11,7 +11,7 @@ class Num {
         a *= 3;
     }
 }
-public class okay {
+public class Return_obj {
     public static void main(String args[]){
         Num n1 = new Num(5);
         Num n2 = n1.incr();
