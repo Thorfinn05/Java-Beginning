@@ -5,6 +5,7 @@ class outerClass{  //Outer Class
     static class staticInnerClass{  //Inner Class
         void display(){
             System.out.println(outer_x);
+            // System.out.println(outer_y);  //non-static variable outer_y cannot be referenced from a static context
             System.out.println(outer_private);
         }
     }
