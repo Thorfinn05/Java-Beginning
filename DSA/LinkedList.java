@@ -123,6 +123,22 @@ class Operation {
         }
         return Start;
     }
+
+    void search(Node Start){
+        Node ptr = Start;
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter val: ");
+        int val = sc.nextInt();
+        int i=1;
+        while(ptr != null){
+            if(ptr.data == val){
+                System.out.println("Element "+val+" found at position "+i);
+                return;
+            }
+            ptr = ptr.next;
+            i++;
+        }
+    }
 }
 
 public class LinkedList {
@@ -137,6 +153,7 @@ public class LinkedList {
         System.out.println("5. Insert at End");
         System.out.println("6. Insert");
         System.out.println("7. Delete");
+        System.out.println("8. Search");
         Scanner sc = new Scanner(System.in);
         do { 
             System.out.println("Enter choice: ");
@@ -162,6 +179,9 @@ public class LinkedList {
                     break;
                 case 7:
                     Start = ob.deleteNode(Start);
+                    break;
+                case 8:
+                    ob.search(Start);
                     break;
             }
         } while (true);
