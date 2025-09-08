@@ -54,6 +54,23 @@ class Operation {
 
         return Start;
     }
+
+    Node insertAtEnd(Node Start){
+        Node newNode = new Node();
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter data: ");
+        int data1 = sc.nextInt();
+
+        newNode.data = data1;
+        newNode.next = null;
+
+        Node temp = Start;
+        while(temp.next != null){
+            temp = temp.next;
+        }
+        temp.next = newNode;
+        return Start;
+    }
 }
 
 public class LinkedList {
@@ -65,6 +82,7 @@ public class LinkedList {
         System.out.println("2. Display");
         System.out.println("3.Exit");
         System.out.println("4. Insert at Beginning");
+        System.out.println("5. Insert at End");
         Scanner sc = new Scanner(System.in);
         do { 
             System.out.println("Enter choice: ");
@@ -81,6 +99,9 @@ public class LinkedList {
                     return;
                 case 4:
                     Start = ob.insertAtBeginning(Start);
+                    break;
+                case 5:
+                    Start = ob.insertAtEnd(Start);
                     break;
             }
         } while (true);
