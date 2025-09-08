@@ -23,7 +23,7 @@ class Operation {
                     temp = temp.next;
                 }
                 temp.next = newNode;
-                temp = newNode;
+                // temp = newNode;
             }
             System.out.println("Enter data[type -1 to exit]: ");
             data1 = sc.nextInt();
@@ -63,6 +63,11 @@ class Operation {
 
         newNode.data = data1;
         newNode.next = null;
+
+        if (Start == null) {
+            Start = newNode;
+            return Start;
+        }
 
         Node temp = Start;
         while(temp.next != null){
@@ -111,14 +116,13 @@ class Operation {
             ptr = null;
         }
         else{
-            int i=1; Node ptr = Start, preptr = ptr, postptr = ptr;
+            int i=1; Node ptr = Start, preptr = ptr;
             while(i<pos){
                 preptr = ptr;
                 ptr = ptr.next;
-                postptr = ptr.next;
                 i++;
             }
-            preptr.next = postptr;
+            preptr.next = ptr.next;
             ptr = null;
         }
         return Start;
